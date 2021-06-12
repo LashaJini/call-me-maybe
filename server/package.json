@@ -1,9 +1,9 @@
 {
   "scripts": {
     "server:prod": "NODE_ENV=production node -r dotenv/config index.js dotenv_config_path=./env/.env",
-    "build:server:prod": "yarn run build && yarn server:prod",
-    "build": "cd ../client/ && yarn run build && rm -rf ../server/build && cp -rf build ../server && cd ../server",
-    "build:server:dev": "yarn run build && yarn run server:dev",
+    "build:server:prod": "yarn run _build && yarn server:prod",
+    "_build": "cd ../client/ && yarn run build && rm -rf ../server/build && cp -rf build ../server && cd ../server",
+    "build:server:dev": "yarn run _build && yarn run server:dev",
     "server:dev": "NODE_ENV=development nodemon -r dotenv/config index.js dotenv_config_path=./env/.env",
     "deploy": "../scripts/deploy.sh"
   },

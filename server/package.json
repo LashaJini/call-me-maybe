@@ -1,5 +1,21 @@
 {
+  "scripts": {
+    "server:prod": "NODE_ENV=production node -r dotenv/config index.js dotenv_config_path=./env/.env",
+    "build:server:prod": "yarn run build && yarn server:prod",
+    "build": "cd ../client/ && yarn run build && rm -rf ../server/build && cp -rf build ../server && cd ../server",
+    "build:server:dev": "yarn run build && yarn run server:dev",
+    "server:dev": "NODE_ENV=development nodemon -r dotenv/config index.js dotenv_config_path=./env/.env",
+    "deploy": "../scripts/deploy.sh"
+  },
   "dependencies": {
-    "express": "4.17.1"
+    "cross-env": "7.0.3",
+    "dotenv": "10.0.0",
+    "express": "4.17.1",
+    "mongoose": "5.12.13",
+    "socket.io": "4.1.2",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.7"
   }
 }

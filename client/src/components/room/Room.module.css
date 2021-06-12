@@ -1,0 +1,94 @@
+.room {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-gap: 0;
+  position: relative;
+}
+
+.videos {
+  width: 100%;
+  min-height: 240px;
+  height: 100%;
+  position: relative;
+  grid-column: span 2;
+  grid-row: 1;
+}
+
+.videoWrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.videoWrapper::before {
+  content: "";
+  position: absolute;
+  background: black;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.videoWrapper > video {
+  width: 100vw;
+  height: 100vh;
+}
+
+.controls {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+/* .controls:hover { */
+/*   opacity: 1; */
+/* } */
+
+.mainVideo {
+  z-index: -2;
+}
+
+/* .mainVideo > video { */
+/*   width: 320px; */
+/*   height: 240px; */
+/* } */
+
+.floatingVideo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  transform: translate(40%);
+  z-index: -1;
+}
+
+.floatingVideo > video {
+  width: 100px;
+  height: 100px;
+}
+
+.canvasWrapper {
+  width: 100%;
+  grid-column: span 2;
+  grid-row: 2;
+}
+
+.canvasWrapper > canvas {
+  width: 100%;
+  height: 100%;
+  background-color: #151515;
+}

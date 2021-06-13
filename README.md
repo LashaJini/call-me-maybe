@@ -14,9 +14,9 @@ in order to this work, you need to set variables in `server/env/.env`.
 **installing dependencies**
 ```bash
 cd client && \
-  yarn install && \
+  yarn install --frozen-lockfile && \
   cd ../server && \
-  yarn install
+  yarn install --frozen-lockfile
 ```
 
 **On local machine**
